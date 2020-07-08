@@ -1,0 +1,42 @@
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color:white;
+}
+
+.container{
+    padding-top:20px;
+    border:1px solid white;
+    border-radius: 40px;
+    width: 800px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.guessbutton{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 5px;
+    width: 110px;
+    height: 50px;
+}
+
+.resetbutton{
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+}
