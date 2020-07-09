@@ -9,15 +9,18 @@ function guessNumber() {
     let userNumber = document.getElementById("guessingArea").value
     console.log(userNumber, "random", randomNumber)
 
-    for (let i = 0; i < history.length; i++) {
-        if (history[i] === userNumber) {
-            document.getElementById("resultArea").innerHTML = `you have already entered that number`
-            return
-        }
+    //making sure user doesnt repeat number
+    if(history.includes(userNumber)){
+        document.getElementById("resultArea").innerHTML = `you have already entered that number`
+        return
     }
 
-    //making sure user enters a number
+    //making sure user enters a number between 0-100
     if (userNumber === "") {
+        document.getElementById("resultArea").innerHTML = `type a number between 1 to 100`
+        return;
+    }
+    if (userNumber <= 0 || userNumber > 100) {
         document.getElementById("resultArea").innerHTML = `type a number between 1 to 100`
         return;
     }
@@ -27,7 +30,7 @@ function guessNumber() {
     if (guessesRemaining <= 0) {
         document.getElementById("guessesRemaining").innerHTML = 0
         document.getElementById("resultArea").innerHTML = `GAME OVER`
-        document.getElementById("guessButtton").disabled
+        
         return;
     } document.getElementById("guessesRemaining").innerHTML = `${guessesRemaining} guesses remaining`
 
@@ -64,7 +67,17 @@ function resetGame() {
 function timecounting() {
     myTime = setInterval(() => {
         time += 1
+        if(time >= 15){
+            document.getElementById("timecount").innerHTML = `TIME'S UP`
+            timeOut()
+            return;
+        }
         document.getElementById("timecount").innerHTML = `${time} second(s) elapsed`
     }, 1000)
 }
+
+function timeOut() {
+    clearInterval(myTime)
+}
+
 timecounting()
