@@ -16,7 +16,6 @@ function guessNumber() {
         }
     }
 
-
     //making sure user enters a number
     if (userNumber === "") {
         document.getElementById("resultArea").innerHTML = `type a number between 1 to 100`
